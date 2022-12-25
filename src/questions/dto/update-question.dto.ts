@@ -8,6 +8,13 @@ export class UpdateQuestionDto {
     text?: string;
 
     @IsNumber()
+    points?: number;
+
+    @IsString()
+    @MaxLength(1023)
+    feedback?: string;
+
+    @IsNumber()
     @IsOptional()
     questionTypeId?: number;
 

@@ -11,6 +11,12 @@ export class Question {
     @Column({type: 'varchar', length: 1023, default: ''})
     text: string;
 
+    @Column({type: 'varchar', length: 1023, default: ''})
+    feedback: string;
+
+    @Column({type: 'int', default: 0})
+    points: number;
+
     @ManyToOne(() => QuestionType, question_type => question_type.questions)
     @JoinColumn({name: 'question_type_id'})
     questionType: QuestionType;

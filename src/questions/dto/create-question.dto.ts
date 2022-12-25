@@ -12,6 +12,14 @@ export class CreateQuestionDto {
     @IsNumber()
     @IsNotEmpty()
     questionTypeId: number;
+
+    @IsNumber()
+    points: number;
+
+    @IsString()
+    @IsNotEmpty()
+    @MaxLength(1023)
+    feedback: string;
     
     @ValidateNested()
     @Type(() => CreateAnswerDto)

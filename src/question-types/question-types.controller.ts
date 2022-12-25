@@ -9,4 +9,10 @@ export class QuestionTypesController {
     async seed() {
         return await this.questionTypesService.seed();
     }
+
+    @Get()
+    async findAll() {
+        return await this.questionTypesService.findAll();
+    }
+    
 }

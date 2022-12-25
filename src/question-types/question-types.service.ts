@@ -11,6 +11,14 @@ export class QuestionTypesService{
         private dataSource: DataSource
     ) {}
 
+    async findAll() {
+        const questionTypes = await this.questionTypesRepository.find();
+
+        if (!questionTypes) throw new NotFoundException('Question types not found');
+
+        return questionTypes;
+    }
+
     async findById(id: number): Promise<QuestionType> {
         const questionType = await this.questionTypesRepository.findOneBy({id});
 
